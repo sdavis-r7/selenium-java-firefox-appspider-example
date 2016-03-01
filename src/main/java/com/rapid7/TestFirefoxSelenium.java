@@ -15,11 +15,26 @@ public class TestFirefoxSelenium {
     private WebDriver driver;
     private String baseScheme = "https";
     private String baseUrl = baseScheme + "://www.mozilla.org/";
+
     private String proxyPort = "32768";
     private String proxyUrl = "127.0.0.1";
-    private boolean acceptNextAlert = true;
-    private StringBuffer verificationErrors = new StringBuffer();
+
     private String FF_PROFILE = "RAPID7APPSPIDERSELENIUM";
+
+
+    private StringBuffer verificationErrors = new StringBuffer();
+
+    public static void main(String[] args) {
+        try {
+            TestFirefoxSelenium tfs = new TestFirefoxSelenium();
+            tfs.setUp();
+            tfs.run();
+            tfs.tearDown();
+        } catch(Exception e){
+            System.out.print(e.toString());
+        }
+    }
+
 
     public void setUp() throws Exception {
 
@@ -48,21 +63,12 @@ public class TestFirefoxSelenium {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    public static void main(String[] args) {
-        try {
-            TestFirefoxSelenium t2 = new TestFirefoxSelenium();
-            t2.setUp();
-            t2.test2();
-            t2.tearDown();
-        } catch(Exception e){
-            System.out.print(e.toString());
-        }
-    }
-
-    public void test2() throws Exception {
+    public void run() throws Exception {
         driver.get(baseUrl + "/en-US/");
+
+        //page specific selenium logic (e.g.)
         driver.findElement(By.cssSelector("span.toggle")).click();
-        driver.findElement(By.cssSelector("span.toggle.open")).click();
+
     }
 
     public void tearDown() throws Exception {

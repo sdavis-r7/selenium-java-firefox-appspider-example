@@ -64,7 +64,7 @@ public class TestFirefoxSelenium {
     }
 
     public void run() throws Exception {
-        driver.get(baseUrl + "/en-US/");
+        driver.get(baseUrl);
 
         //page specific selenium logic (e.g.)
         driver.findElement(By.cssSelector("span.toggle")).click();

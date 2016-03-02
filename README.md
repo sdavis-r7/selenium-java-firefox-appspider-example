@@ -11,7 +11,7 @@ dependencies
 * [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 
 
-installation & building
+building example
 ------------
 
 ```
@@ -22,5 +22,7 @@ mvn package
 # the selenium script built is:
 # target/example-1.0-SNAPSHOT-jar-with-dependencies.jar 
 ```
+
+
 
 

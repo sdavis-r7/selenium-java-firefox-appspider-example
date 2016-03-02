@@ -11,7 +11,7 @@ dependencies
 * [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 
 
-building example
+building the example
 ------------
 
 ```
@@ -22,6 +22,27 @@ mvn package
 # the selenium script built is:
 # target/example-1.0-SNAPSHOT-jar-with-dependencies.jar 
 ```
+
+preparing firefox
+-------------
+
+* Export the AppSpider proxy certificate from Trusted Root System store using `certmgr`.
+
+![certmgr](img/certmgr.png)
+
+* Create new Firefox profile
+
+![ffoxprofile](img/ffoxprofile.png)
+
+* Import AppSpider certificate into new firefox profile
+
+![importffox](img/importffox.png)
+
+* Create an AppSpider run configuration with Proxy configured for firefox, and import the selenium jar built previously.
+
+![appspider](img/appspider.png)
+![appspider](img/appspider2.png)
+
 
 
 
